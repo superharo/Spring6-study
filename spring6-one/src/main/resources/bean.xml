@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    * dom4j解析beans.xml文件，从中获取class属性值，类的全类名
+    * 通过反射机制调用无参数构造方法创建对象
+    *      Class clazz = Class.forName("online.superh.bean.User");
+    *      Object obj = clazz.newInstance();
+    *      Object object = clazz.getDeclaredConstructor().newInstance();
+
+    Spring容器加载到Bean类时 , 会把这个类的描述信息, 以包名加类名的方式存到beanDefinitionMap 中,
+    Map<String,BeanDefinition> ,
+    private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>(256);
+    其中 :
+        String是Key , 默认是类名首字母小写 ,
+        BeanDefinition , 存的是类的定义(描述信息) , 我们通常叫BeanDefinition接口为 : bean的定义对象。
+     -->
+
+    <!--通过bean标签配置IOC容器所管理的bean
+    属性：
+        id：设置bean的唯一标识
+        class：设置bean所对应类型的全类名
+    -->
+
+    <bean id="user" class="online.superh.bean.User"></bean>
+
+</beans>
