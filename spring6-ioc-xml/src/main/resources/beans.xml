@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user1" class="online.superh.ioc.xml.User"></bean>
+
+    <bean id="user2" class="online.superh.ioc.xml.User"></bean>
+
+    <!-- 依赖注入之setter注入 -->
+    <bean id="studentOne" class="online.superh.ioc.xml.Student">
+        <!-- property标签：通过组件类的setXxx()方法给组件对象设置属性 -->
+        <!-- name属性：指定属性名（这个属性名是getXxx()、setXxx()方法定义的，和成员变量无关） -->
+        <!-- value属性：指定属性值 -->
+        <property name="id" value="1001"></property>
+        <property name="name" value="张三"></property>
+        <property name="age" value="23"></property>
+        <property name="sex" value="男"></property>
+    </bean>
+
+    <!--  DI 依赖注入之构造器注入 -->
+    <bean id="studentTwo" class="online.superh.ioc.xml.Student">
+        <constructor-arg value="1002"></constructor-arg>
+        <constructor-arg value="李四"></constructor-arg>
+        <constructor-arg value="33"></constructor-arg>
+        <constructor-arg value="女"></constructor-arg>
+    </bean>
+
+    <bean id="studentFour" class="online.superh.ioc.xml.Student">
+        <property name="id" value="1004"></property>
+        <property name="name" value="赵六"></property>
+        <property name="age" value="26"></property>
+        <property name="sex" value="女"></property>
+        <!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 -->
+        <property name="user" ref="user1"></property>
+    </bean>
+
+    <bean id="userf" class="online.superh.ioc.xml.factoryBean.UserFactoryBean"></bean>
+
+</beans>
