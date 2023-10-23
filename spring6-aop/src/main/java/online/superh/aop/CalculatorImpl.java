@@ -1,12 +1,15 @@
 package online.superh.aop;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @version: 1.0
  * @author: haro
  * @description:
  * @date: 2023-10-23 11:26
  */
-public class CalculatorLogImpl implements Calculator {
+@Component
+public class CalculatorImpl implements Calculator {
 
     @Override
     public int add(int i, int j) {
