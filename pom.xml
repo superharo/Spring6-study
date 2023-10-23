@@ -14,6 +14,7 @@
       <module>spring-jdbc-tx</module>
       <module>Spring6-resource</module>
       <module>Spring6-i18n</module>
+      <module>spring-aot</module>
   </modules>
 
   <properties>
