@@ -13,6 +13,7 @@
       <module>spring6-aop</module>
       <module>spring-jdbc-tx</module>
       <module>Spring6-resource</module>
+      <module>Spring6-i18n</module>
   </modules>
 
   <properties>
